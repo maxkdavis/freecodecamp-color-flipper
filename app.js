@@ -1,17 +1,17 @@
-const colors = ['green', 'red', 'rgba(133,122,200)', '#f15025'];
+const colors = ['green', 'red', 'rgba(133,122,200)', '#f15025', 'pink', 'blue'];
 
+//store the button in a variable
 const btn = document.getElementById('btn');
-const color = document.querySelector('.color');
+
+//generate a random number between 0 and the length of our color array
+const getRandomNumber = function () {
+  return Math.floor(Math.random() * colors.length);
+};
 
 btn.addEventListener('click', function () {
-  //get a random number between 0 and 3
-  const randomNumber = getRandomNumber();
-  console.log(randomNumber);
-  //target the <body> element and style it
-  document.body.style.backgroundColor = colors[randomNumber];
-  color.textContent = colors[randomNumber];
+  let number = getRandomNumber();
+  //change background color
+  document.body.style.backgroundColor = colors[number];
+  //change span text to reflect randomly selected color
+  document.querySelector('.color').textContent = colors[number];
 });
-
-function getRandomNumber() {
-  return Math.floor(Math.random() * colors.length);
-}
