@@ -9,9 +9,9 @@ const getRandomNumber = function () {
 };
 
 btn.addEventListener('click', function () {
-  let number = getRandomNumber();
+  let randomNumber = getRandomNumber();
   //change background color
-  document.body.style.backgroundColor = colors[number];
+  document.body.style.backgroundColor = colors[randomNumber];
   //change span text to reflect randomly selected color
-  document.querySelector('.color').textContent = colors[number];
+  document.querySelector('.color').textContent = colors[randomNumber];
 });
